@@ -1,6 +1,6 @@
 
 //Selection Sort implementation
-class SelectionSort
+public class SelectionSort
 {
     void sort(int arr[])
     {
