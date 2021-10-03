@@ -1,32 +1,35 @@
-import java.util.Arrays;
-
-public class Bubble_sort {
-
-    public static void main(String[] args) {
-
-        int[] intArray = { 20, 35, -15, 7, 55, 1, -22 };
-
-        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < lastUnsortedIndex; i++) {
-                if (intArray[i] > intArray[i + 1]) {
-                    swap(intArray, i, i + 1);
+class BubbleSort
+{
+    void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    // swap arr[j+1] and arr[j]
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                 }
-            }
-        }
-
-        System.out.println(Arrays.toString(intArray));
-
     }
-
-    public static void swap(int[] array, int i, int j) {
-
-        if (i == j) {
-            return;
-        }
-
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-
+ 
+    /* Prints the array */
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+ 
+    // Driver method to test above
+    public static void main(String args[])
+    {
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
     }
 }

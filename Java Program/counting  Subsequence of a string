@@ -1,0 +1,31 @@
+public class SubsequenceGenerate {
+
+	static int count;
+        // taking input and output string as parameter
+	public static int genSubs2(String input, String ans) {
+
+		if (input.length() == 0) {
+			
+			System.out.println(ans);
+			return 1;
+		}
+		
+		int count = 0;
+		char cc = input.charAt(0); // a
+          //  creating subsequence either by adding and eliminating characters and countting
+		count = count + genSubs2(input.substring(1), ans);
+		
+		count = count + genSubs2(input.substring(1), ans + cc);
+
+		return count;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		count = 0;
+		int ct = genSubs2("abc", "");
+		System.out.println(ct);
+	}
+
+}
