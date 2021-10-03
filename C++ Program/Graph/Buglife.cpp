@@ -1,5 +1,5 @@
 // https://www.spoj.com/problems/BUGLIFE/   Problem link
-// BUGLIF is impotant graph question
+// BUGLIF is important graph question
 
 #include<iostream>
 #include<vector>
