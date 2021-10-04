@@ -1,0 +1,14 @@
+#pip install pyqrcode
+import pyqrcode
+import png
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+url = pyqrcode.create(input())
+
+url.png('myqr.png', scale = 6)
+print('Done!')
+
+img = mpimg.imread('myqr.png')
+imgplot = plt.imshow(img)
+plt.show()
